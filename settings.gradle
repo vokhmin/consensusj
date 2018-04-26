@@ -4,4 +4,5 @@ include 'bitcoinj-json',                                             // JSON <->
         'bitcoinj-dsl', 'bitcoinj-spock',                            // DSL/Testing
         'bitcoinj-money',                                             // JavaMoney (JSR-354) support
         'bitcoinj-dsljs',
-        'bitcoinj-proxy'
+        'bitcoinj-proxy',
+        'bitcoinj-explorer'

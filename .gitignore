@@ -4,6 +4,5 @@ build
 *.iml
 *.ipr
 *.iws
-bitcoinj-*/out
-
+out
 

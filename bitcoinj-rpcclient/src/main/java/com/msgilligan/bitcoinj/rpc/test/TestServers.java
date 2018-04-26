@@ -5,8 +5,8 @@ package com.msgilligan.bitcoinj.rpc.test;
  */
 public class TestServers {
     private static final TestServers INSTANCE = new TestServers();
-    private final String rpcTestUser = System.getProperty("omni.test.rpcTestUser", "bitcoinrpc");
-    private final String rpcTestPassword = System.getProperty("omni.test.rpcTestPassword", "pass");
+    private final String rpcTestUser = System.getProperty("omni.test.rpcTestUser", "bitcoin");
+    private final String rpcTestPassword = System.getProperty("omni.test.rpcTestPassword", "password");
 
     public static TestServers getInstance() {
         return INSTANCE;
