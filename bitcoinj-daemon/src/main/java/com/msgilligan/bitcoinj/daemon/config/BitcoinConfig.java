@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.Module;
 import com.googlecode.jsonrpc4j.spring.JsonServiceExporter;
-import com.msgilligan.bitcoinj.explorer.spring.service.PeerGroupService;
+import com.msgilligan.bitcoinj.spring.service.PeerGroupService;
 import com.msgilligan.bitcoinj.json.conversion.RpcServerModule;
 import com.msgilligan.bitcoinj.rpcserver.BitcoinJsonRpc;
 
