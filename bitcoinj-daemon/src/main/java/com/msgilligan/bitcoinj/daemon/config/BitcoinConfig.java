@@ -1,18 +1,19 @@
 package com.msgilligan.bitcoinj.daemon.config;
 
-import com.googlecode.jsonrpc4j.spring.JsonServiceExporter;
-import com.msgilligan.bitcoinj.rpcserver.BitcoinJsonRpc;
-import com.msgilligan.bitcoinj.json.conversion.RpcServerModule;
-import com.msgilligan.bitcoinj.spring.service.PeerGroupService;
+import java.io.FileNotFoundException;
+
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.net.discovery.DnsDiscovery;
 import org.bitcoinj.net.discovery.PeerDiscovery;
 import org.bitcoinj.params.MainNetParams;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.fasterxml.jackson.databind.Module;
 
-import java.io.FileNotFoundException;
+import com.fasterxml.jackson.databind.Module;
+import com.googlecode.jsonrpc4j.spring.JsonServiceExporter;
+import com.msgilligan.bitcoinj.explorer.spring.service.PeerGroupService;
+import com.msgilligan.bitcoinj.json.conversion.RpcServerModule;
+import com.msgilligan.bitcoinj.rpcserver.BitcoinJsonRpc;
 
 /**
  * Spring configuration for bitcoinj, Bitcoin services, and JSON-RPC server

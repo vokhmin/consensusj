@@ -3,7 +3,6 @@ package com.msgilligan.bitcoinj.spring.config;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.consensusj.jsonrpc.RPCClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.msgilligan.bitcoinj.spring.controller.ExplorerController;
+import com.msgilligan.bitcoinj.spring.service.CustomRPCClient;
 
 /**
  *
@@ -19,27 +19,27 @@ import com.msgilligan.bitcoinj.spring.controller.ExplorerController;
 @EnableWebMvc
 public class WebConfig extends WebMvcAutoConfiguration {
 
-    @Value("bitcoin.rpc.url")
-    private String apiUri = "http://localhost:18332";
+    @Value("${bitcoin.rpc.url}")
+    private String apiUri;  //  = "http://localhost:18332";
 
-    @Value("bitcoin.rpc.user")
-    private String user = "bitcoin";
+    @Value("${bitcoin.rpc.user}")
+    private String user;    // = "bitcoin";
 
-    @Value("bitcoin.rpc.password")
-    private String password = "password";
+    @Value("${bitcoin.rpc.password}")
+    private String password;    // = "password";
 
     @Bean
-    private RPCClient rpcClient() {
+    CustomRPCClient rpcClient() {
         try {
             final URI uri = new URI(apiUri);
-            return new RPCClient(uri, user, password);
+            return new CustomRPCClient(uri, user, password);
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Bean
-    private ExplorerController controller() {
+    ExplorerController controller() {
         return new ExplorerController(rpcClient());
     }
 

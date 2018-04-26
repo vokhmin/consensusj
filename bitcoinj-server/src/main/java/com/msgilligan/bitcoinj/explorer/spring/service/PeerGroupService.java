@@ -1,4 +1,4 @@
-package com.msgilligan.bitcoinj.spring.service;
+package com.msgilligan.bitcoinj.explorer.spring.service;
 
 import com.msgilligan.bitcoinj.json.pojo.ServerInfo;
 import com.msgilligan.bitcoinj.rpcserver.BitcoinJsonRpc;
